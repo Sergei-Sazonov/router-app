@@ -29,12 +29,34 @@ Check the application: After successful startup, you can check if your applicati
 
 The application has a simplified authorization system. First, register a new user, log in using the new user, and using the received token, you can make requests for other endpoints.
 
-Stop the application: To stop the application and all associated containers, run the command:
-
+Register URL
 ```bash
-docker-compose down
+http://localhost:3000/register
+```
+Body example for register
+```bash
+{
+    "name": "user",
+    "email": "user@gmail.com",
+    "password": "user"
+}
 ```
 
+Login URL
+```bash
+http://localhost:3000/login
+```
+Body example for login
+```bash
+{
+    "email": "user@gmail.com",
+    "password": "user"
+}
+```
+Event URL
+```bash
+http://localhost:3000/events
+```
 Body examples for strategy requests:
 
 **ALL**
@@ -165,4 +187,9 @@ Body examples for strategy requests:
     ]
 }
 
+```
+
+Stop the application: To stop the application and all associated containers, run the command:
+```bash
+docker-compose down
 ```
