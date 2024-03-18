@@ -18,13 +18,23 @@ To run the application, you will need Docker and Docker Compose installed.
    ```bash
    cd <directory-name>
    ```
+3. **Before running the application, add a file with the following values to the .env root**
+   ```bash
+   PORT=3000
+   JWT_SECRET_KEY=pHnsjkLuijnalEEs
+   SALT=10
+   BYTES=1024
+   JWT_EXPIRE=1h
+   ATLAS_URI=mongodb://mongodb:27017/routerApp
+   ```
 
-3. **Run the application using Docker Compose**: Execute the command to run Docker Compose, which will automatically create and configure containers for your application and database:
+4. **Run the application using Docker Compose**: Execute the command to run Docker Compose, which will automatically create and configure containers for your application and database:
    ```bash
    docker-compose up --build
    ```
 
 This command will start your application and MongoDB.
+
 Check the application: After successful startup, you can check if your application is running by visiting http://localhost:3000 in your web browser.
 
 The application has a simplified authorization system. First, register a new user, log in using the new user, and using the received token, you can make requests for other endpoints.
