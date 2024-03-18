@@ -1,4 +1,4 @@
-router-app
+## Router-app
 A simple router-app that handles incoming events and routes them to one or multiple destinations via specific transports according to routing strategy.
 To receive an event app exposes a simple HTTP-endpoint, whereto authorized clients may send HTTP-requests. List of available destinations and strategy are stored in a database and change dynamically.
 Each event may override strategy by specifying desired strategy name (or custom strategy source code) in a request params.
@@ -10,7 +10,7 @@ To run the application, you will need Docker and Docker Compose installed.
 1. **Clone the repository**: First, clone this repository to your local machine:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Sergei-Sazonov/router-app.git
    ```
 
 2. **Navigate to the project directory**: Change into the project directory:
