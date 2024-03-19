@@ -1,4 +1,5 @@
 ## Router-app
+
 A simple router-app that handles incoming events and routes them to one or multiple destinations via specific transports according to routing strategy.
 To receive an event app exposes a simple HTTP-endpoint, whereto authorized clients may send HTTP-requests. List of available destinations and strategy are stored in a database and change dynamically.
 Each event may override strategy by specifying desired strategy name (or custom strategy source code) in a request params.
@@ -18,7 +19,9 @@ To run the application, you will need Docker and Docker Compose installed.
    ```bash
    cd <directory-name>
    ```
+
 3. **Before running the application, add a file with the following values to the .env root**
+
    ```bash
    PORT=3000
    JWT_SECRET_KEY=pHnsjkLuijnalEEs
@@ -40,10 +43,14 @@ Check the application: After successful startup, you can check if your applicati
 The application has a simplified authorization system. First, register a new user, log in using the new user, and using the received token, you can make requests for other endpoints.
 
 Register URL
+Method: POST
+
 ```bash
 http://localhost:3000/register
 ```
+
 Body example for register
+
 ```bash
 {
     "name": "user",
@@ -53,20 +60,28 @@ Body example for register
 ```
 
 Login URL
+Method: POST
+
 ```bash
 http://localhost:3000/login
 ```
+
 Body example for login
+
 ```bash
 {
     "email": "user@gmail.com",
     "password": "user"
 }
 ```
+
 Event URL
+Method: POST
+
 ```bash
 http://localhost:3000/events
 ```
+
 Body examples for strategy requests:
 
 **ALL**
@@ -200,6 +215,7 @@ Body examples for strategy requests:
 ```
 
 Stop the application: To stop the application and all associated containers, run the command:
+
 ```bash
 docker-compose down
 ```
