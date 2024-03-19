@@ -1,14 +1,6 @@
 import { ObjectId } from "mongodb";
 import { Document } from "mongoose";
 
-export enum TransportType {
-  HttpPost = "http.post",
-  HttpPut = "https.put",
-  HttpGet = "http.get",
-  ConsoleLog = "console.log",
-  ConsoleWarn = "console.warn",
-}
-
 export enum StrategyType {
   all = "ALL",
   important = "IMPORTANT",
